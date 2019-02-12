@@ -20,7 +20,10 @@ ENV LC_ALL en_US.UTF-8
 ENV LC_CTYPE en_US.UTF-8
 ENV LC_MESSAGES en_US.UTF-8
 
-RUN apk add --no-cache python3 python3-dev shadow build-base git openssl openssl-dev libxml-dev libffi-dev freetds freetds-dev postgresql-client py3-psycopg2 && \
+##     apk add --no-cache python3 python3-dev shadow build-base git openssl openssl-dev libxml-dev libffi-dev freetds freetds-dev postgresql-client py3-psycopg2 && \
+RUN apk update && \
+    apk add -u python3 python3-dev shadow build-base git openssl openssl-dev libxml2-dev libffi-dev freetds freetds-dev postgresql-client py3-psycopg2 && \
+    rm -rf /var/lib/apt/lists/* && \
     python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
     pip3 install --upgrade pip setuptools && \
