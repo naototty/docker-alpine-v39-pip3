@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker image build . naototty/alpine-v39-pip3
+docker image build . -t naototty/alpine-v39-pip3
 
