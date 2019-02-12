@@ -32,4 +32,4 @@ RUN apk update && \
     rm -r /root/.cache \
       && rm -rf \
          /tmp/* \
-         /var/tmp/* \
+         /var/tmp/*
